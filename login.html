@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- Bulma Version 0.7.2-->
+    <link rel="stylesheet" href="bulma-0.7.2/css/bulma.min.css" />
+    <style>
+        .hero-body {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered" style="max-width: 500px;">
+                <h1 class="title has-text-grey is-size-2">Login</h3>
+                <p class="subtitle has-text-grey is-size-4">to access all your game data</p>
+                <div class="box">
+                    <form>
+                        <div class="field ">
+                            <div class="control has-icons-left">
+                                <input class="input is-large" type="email" placeholder="Username" autofocus=true>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user-circle"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control  has-icons-left">
+                                <input class="input is-large" type="password" placeholder="Password">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="checkbox">
+                            <input type="checkbox">
+                            Remember me
+                            </label>
+                        </div>
+                        <button class="button is-block is-info is-large is-fullwidth">Login</button>
+                    </form>
+                </div>
+
+                <hr style="background-color: #ccc; margin: 3rem 0">
+
+                <a class="content is-medium">
+                    <span>Or, Continue as a guest&nbsp;</span>
+                    <span class="icon is-small" style="position: relative; top: 2px;">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
