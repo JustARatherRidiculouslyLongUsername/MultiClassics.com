@@ -25,11 +25,15 @@ const socket = require('socket.io');
 const io = socket(server);
 
 io.on('connection', socket => {
+
+    // Let the client know it's id
     const message =  socket.id + ' joined';
     console.log(message);
     socket.emit('message', 'Your id is ' + socket.id);
 
+    // When the form is submitted, print out the data
     socket.on('form-submitted', data => {
         console.log(data)
     });
+    
 });
