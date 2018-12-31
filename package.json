@@ -1,0 +1,30 @@
+{
+  "name": "multiclassics.com",
+  "version": "1.0.0",
+  "description": "A collection of classic games, but with a twist!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustARatherRidiculouslyLongUsername/MultiClassics.com.git"
+  },
+  "keywords": [
+    "games",
+    "multiplayer",
+    "website",
+    "classic",
+    "arcade"
+  ],
+  "author": "Just A Rather Ridiculously Long Username",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustARatherRidiculouslyLongUsername/MultiClassics.com/issues"
+  },
+  "homepage": "https://github.com/JustARatherRidiculouslyLongUsername/MultiClassics.com#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  }
+}
