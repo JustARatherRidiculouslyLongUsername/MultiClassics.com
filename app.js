@@ -26,14 +26,18 @@ const io = socket(server);
 
 io.on('connection', socket => {
 
-    // Let the client know it's id
-    const message =  socket.id + ' joined';
-    console.log(message);
+    // Log the connection and disconnection of the socket
+    console.log(socket.id + ' joined');
     socket.emit('message', 'Your id is ' + socket.id);
 
-    // When the form is submitted, print out the data
-    socket.on('form-submitted', data => {
-        console.log(data)
+    socket.on('disconnect', () => {
+        console.log(socket.id + ' left');
+    });
+    
+
+    // When the login form is submitted, print out the data
+    socket.on('login-form-submitted', data => {
+        console.log(data);
     });
     
 });

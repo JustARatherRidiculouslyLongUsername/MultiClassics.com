@@ -1,5 +1,4 @@
 window.onload = () => {
-
     const socket = io();
 
     // Console log any data sent as a message event
@@ -8,21 +7,22 @@ window.onload = () => {
     });
 
     // Create reference to the form element
-    const form = document.getElementById('form');
+    const form = document.querySelector('#login-form');
+    const formElems = form.elements;
     
+    // When the form is submitted
     form.addEventListener('submit', e => {
         
         // Make the browser not reload
         e.preventDefault();
-
-        const formData = new FormData(form);
         
-        // convert iterator to array
-        const data = Array.from(formData.entries());
+        // And send the data to the server
+        socket.emit('login-form-submitted', {
+            username: formElems.username.value,
+            password: formElems.password.value,
+            remember: formElems.remember.checked
+        });
 
-        // Send the array to server
-        socket.emit('form-submitted', data);
-    })
-
+    });
 
 };
