@@ -1,0 +1,51 @@
+.hero-body {
+    background-color: #eee;
+}
+
+/* tabs in .hero have no bottom
+line by default for some reason */
+.hero .tabs:not(.is-toggle) ul {
+    border-bottom-color: #dbdbdb;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+/* because .container.has-text-centered */
+.label {
+    text-align: left;
+}
+
+span.help {
+    text-align: left;
+    display: inline;
+    color: #aaa;
+}
+
+/* MARGINS */
+
+/* All .fields in #login-form except the last 3 */
+#login-form .field:not(:nth-last-child(-n+3)) {
+    margin-bottom: 1.5rem;
+}
+
+#sign-up-form .field:not(:nth-last-child(1)) {
+    margin-bottom: 1.5rem;
+}
+
+#remember-me {
+    margin: 1rem;
+}
+
+#tabs {
+    margin-bottom: .2rem;
+}
+
+#sign-up-form > .field:first-child {
+    margin-top: 1rem;
+}
+
+/* DEFAULT SETTINGS */
+
+#sign-up-form {
+    display: none;
+}

@@ -15,24 +15,30 @@
     <script src="socket.io/socket.io.js"></script>
     <script src="main.js"></script>
     
-    <style>
-        .hero-body {
-            background-color: #eee;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <section class="hero is-fullheight">
         <div class="hero-body">
             <div class="container has-text-centered" style="max-width: 500px;">
-                <h1 class="title has-text-grey is-size-2">Login</h3>
-                <p class="subtitle has-text-grey is-size-4">to access all your game data</p>
+
+                <h1 class="title has-text-grey is-size-2" id="title">Login</h3>
+                <p class="subtitle has-text-grey is-size-4" id="subtitle">to access all your game data</p>
+
                 <div class="box">
+                    <div class="tabs is-centered is-toggle is-toggle-rounded" id="tabs">
+                        <ul>
+                            <li class="is-active"><a id="login-btn">Login</a></li>
+                            <li><a id="sign-up-btn">Sign Up</a></li>
+                        </ul>
+                    </div>
+                    
                     <form id="login-form" name="login-form">
                         <div class="field ">
+                            <label for="login-username" class="label">Username</label>
                             <div class="control has-icons-left">
-                                <input class="input is-large" placeholder="Username" autofocus=true name="username" autocomplete="username">
+                                <input class="input is-large" placeholder="" autofocus=true name="username" id="login-username" autocomplete="username">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user-circle"></i>
                                 </span>
@@ -40,8 +46,52 @@
                         </div>
 
                         <div class="field">
+                            <label for="login-password" class="label">
+                                Password
+                                <!-- <span class="help">- Your password that is 10+ characters long</span> -->
+                            </label>
                             <div class="control  has-icons-left">
-                                <input class="input is-large" type="password" placeholder="Password" name="password" autocomplete="current-password">
+                                <input class="input is-large" type="password" placeholder="" name="password" id="login-password" autocomplete="current-password">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field" id="remember-me">
+                            <label class="checkbox">
+                            <input type="checkbox" name="remember">
+                            Remember me
+                            </label>
+                        </div>
+
+                        <button class="button is-block is-info is-large is-fullwidth">Login</button>
+
+                    </form>
+                    <!-- end of #login-form -->
+
+                    <form id="sign-up-form">
+
+                        <div class="field ">
+                            <label for="sign-up-username" class="label">
+                                Username
+                                <span class="help">- What everyone else will call you</span>
+                            </label>
+                            <div class="control has-icons-left">
+                                <input class="input is-large" placeholder="" autofocus=true name="username" id="sign-up-username" autocomplete="username">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user-circle"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="sign-up-password" class="label">
+                                Password
+                                <span class="help">- Make it something not easy to guess</span>
+                            </label>
+                            <div class="control  has-icons-left">
+                                <input class="input is-large" type="password" placeholder="" name="password" id="sign-up-password" autocomplete="current-password">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
@@ -49,14 +99,25 @@
                         </div>
 
                         <div class="field">
-                            <label class="checkbox">
-                            <input type="checkbox" name="remember">
-                            Remember me
+                            <label for="confirm-password" class="label">
+                                Confirm Password
+                                <span class="help">- Make sure you typed it right</span>
                             </label>
+                            <div class="control has-icons-left">
+                                <input class="input is-large" type="password" placeholder="" name="password" id="confirm-password" autocomplete="current-password">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-check-double"></i>
+                                </span>
+                            </div>
                         </div>
-                        <button class="button is-block is-info is-large is-fullwidth">Login</button>
+
+                        <button class="button is-block is-info is-large is-fullwidth">Sign Up</button>
+
                     </form>
+
+
                 </div>
+                <!-- end of .box -->
 
                 <hr style="background-color: #ccc; margin: 3rem 0">
 
