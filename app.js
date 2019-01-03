@@ -22,6 +22,7 @@ const server = app.listen(3000, () => {
 // =========
 
 const socket = require('socket.io');
+const fs = require('fs');
 const io = socket(server);
 
 io.on('connection', socket => {
@@ -35,9 +36,17 @@ io.on('connection', socket => {
     });
     
 
-    // When the login form is submitted, print out the data
+    // When the login form is submitted, store the data to login-data.json
     socket.on('login-form-submitted', data => {
-        console.log(data);
+
+        const users = require('./login-data');
+
+        users.push(data);
+
+        fs.writeFile('./login-data.json', JSON.stringify(users, null, 4), err => {
+            if (err) return console.log(err);
+            console.log('Done');
+        });
     });
     
 });
