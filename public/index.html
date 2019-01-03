@@ -19,6 +19,47 @@
         .hero-body {
             background-color: #eee;
         }
+
+        /* tabs in .hero have no bottom
+        line by default for some reason */
+        .hero .tabs:not(.is-toggle) ul {
+            border-bottom-color: #dbdbdb;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+        }
+
+        /* because .container.has-text-centered */
+        .label {
+            text-align: left;
+        }
+
+        span.help {
+            text-align: left;
+            display: inline;
+            color: #aaa;
+        }
+
+        /* MARGINS */
+
+        /* All .fields in #login-form except the last 3 */
+        #login-form .field:not(:nth-last-child(-n+3)) {
+            margin-bottom: 1.5rem;
+        }
+
+        #remember-me {
+            margin: 1rem;
+        }
+
+        #tabs {
+            margin-bottom: .2rem;
+        }
+
+        /* DEFAULT SETTINGS */
+
+        #sign-up-form {
+            display: none;
+        }
+
     </style>
 </head>
 
@@ -26,13 +67,23 @@
     <section class="hero is-fullheight">
         <div class="hero-body">
             <div class="container has-text-centered" style="max-width: 500px;">
+
                 <h1 class="title has-text-grey is-size-2">Login</h3>
                 <p class="subtitle has-text-grey is-size-4">to access all your game data</p>
+
                 <div class="box">
+                    <div class="tabs is-centered is-toggle is-toggle-rounded" id="tabs">
+                        <ul>
+                            <li class="is-active"><a id="login-btn">Login</a></li>
+                            <li><a id="sign-up-btn">Sign Up</a></li>
+                        </ul>
+                    </div>
+                    
                     <form id="login-form" name="login-form">
                         <div class="field ">
+                            <label for="login-username" class="label">Username</label>
                             <div class="control has-icons-left">
-                                <input class="input is-large" placeholder="Username" autofocus=true name="username" autocomplete="username">
+                                <input class="input is-large" placeholder="" autofocus=true name="username" id="login-username" autocomplete="username">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user-circle"></i>
                                 </span>
@@ -40,15 +91,19 @@
                         </div>
 
                         <div class="field">
+                            <label for="password" class="label">
+                                Password
+                                <!-- <span class="help">- Your password that is 10+ characters long</span> -->
+                            </label>
                             <div class="control  has-icons-left">
-                                <input class="input is-large" type="password" placeholder="Password" name="password" autocomplete="current-password">
+                                <input class="input is-large" type="password" placeholder="" name="password" id="login-password" autocomplete="current-password">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
                             </div>
                         </div>
 
-                        <div class="field">
+                        <div class="field" id="remember-me">
                             <label class="checkbox">
                             <input type="checkbox" name="remember">
                             Remember me
@@ -56,7 +111,23 @@
                         </div>
                         <button class="button is-block is-info is-large is-fullwidth">Login</button>
                     </form>
+                    <!-- end of #login-form -->
+
+                    <form id="sign-up-form">
+                    <div class="field ">
+                        <label for="sign-up-username" class="label">Username</label>
+                        <div class="control has-icons-left">
+                            <input class="input is-large" placeholder="" autofocus=true name="username" id="sign-up-username" autocomplete="username">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user-circle"></i>
+                            </span>
+                        </div>
+                    </div>
+                    </form>
+
+
                 </div>
+                <!-- end of .box -->
 
                 <hr style="background-color: #ccc; margin: 3rem 0">
 
