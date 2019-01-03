@@ -32,20 +32,32 @@ window.onload = () => {
 
     const signUpBtn = document.querySelector('#sign-up-btn');
     signUpBtn.addEventListener('click', e => {
+        // Hide the login form
         const loginForm = document.querySelector('#login-form')
         loginForm.style.display = 'none';
 
+        // Show the sign up form
         const signUpForm = document.querySelector('#sign-up-form');
         signUpForm.style.display = 'block';
+
+        // Change the title and subtitle
+        document.querySelector('#title').innerHTML = 'Sign Up';
+        document.querySelector('#subtitle').innerHTML = 'and create your very own account';
     });
 
     const LoginBtn = document.querySelector('#login-btn');
     LoginBtn.addEventListener('click', e => {
+        // Hide the sign up form
         const signUpForm = document.querySelector('#sign-up-form');
         signUpForm.style.display = 'none';
         
+        // Show the login form
         const loginForm = document.querySelector('#login-form')
         loginForm.style.display = 'block';
+        
+        // Change the title and subtitle
+        document.querySelector('#title').innerHTML = 'Login';
+        document.querySelector('#subtitle').innerHTML = 'to access all your game data';
     });
     
     // When the login form is submitted
